@@ -12,6 +12,13 @@
 		68346FA32497B72200A12BD1 /* ArticlesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68346FA22497B72200A12BD1 /* ArticlesViewModel.swift */; };
 		68346FA52497B73200A12BD1 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68346FA42497B73200A12BD1 /* Article.swift */; };
 		68346FA72497B74000A12BD1 /* Articles.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68346FA62497B74000A12BD1 /* Articles.storyboard */; };
+		68346FAF2497C19000A12BD1 /* APIEndpointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68346FA92497C19000A12BD1 /* APIEndpointType.swift */; };
+		68346FB02497C19000A12BD1 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68346FAA2497C19000A12BD1 /* APIClient.swift */; };
+		68346FB12497C19000A12BD1 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68346FAB2497C19000A12BD1 /* Result.swift */; };
+		68346FB22497C19000A12BD1 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68346FAC2497C19000A12BD1 /* Reachability.swift */; };
+		68346FB32497C19000A12BD1 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68346FAD2497C19000A12BD1 /* CustomError.swift */; };
+		68346FB42497C19000A12BD1 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68346FAE2497C19000A12BD1 /* Endpoint.swift */; };
+		68346FB72497CBCB00A12BD1 /* ArticlesClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68346FB62497CBCB00A12BD1 /* ArticlesClient.swift */; };
 		686216812497B2140086674D /* mvvm_testTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686216802497B2140086674D /* mvvm_testTests.swift */; };
 		6862169B2497B4250086674D /* mvvm_test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6862168F2497B4250086674D /* mvvm_test.xcdatamodeld */; };
 		6862169C2497B4250086674D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686216922497B4250086674D /* AppDelegate.swift */; };
@@ -35,6 +42,13 @@
 		68346FA22497B72200A12BD1 /* ArticlesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesViewModel.swift; sourceTree = "<group>"; };
 		68346FA42497B73200A12BD1 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		68346FA62497B74000A12BD1 /* Articles.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Articles.storyboard; sourceTree = "<group>"; };
+		68346FA92497C19000A12BD1 /* APIEndpointType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIEndpointType.swift; sourceTree = "<group>"; };
+		68346FAA2497C19000A12BD1 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		68346FAB2497C19000A12BD1 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		68346FAC2497C19000A12BD1 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		68346FAD2497C19000A12BD1 /* CustomError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
+		68346FAE2497C19000A12BD1 /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		68346FB62497CBCB00A12BD1 /* ArticlesClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesClient.swift; sourceTree = "<group>"; };
 		686216632497B20E0086674D /* mvvm-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mvvm-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6862167C2497B2140086674D /* mvvm-testTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mvvm-testTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		686216802497B2140086674D /* mvvm_testTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mvvm_testTests.swift; sourceTree = "<group>"; };
@@ -67,6 +81,7 @@
 		68346F9E2497B62F00A12BD1 /* ArticleList */ = {
 			isa = PBXGroup;
 			children = (
+				68346FB52497CBA600A12BD1 /* Client */,
 				68346F9F2497B62F00A12BD1 /* ViewModel */,
 				68346FA02497B62F00A12BD1 /* Data Models */,
 				68346FA12497B62F00A12BD1 /* View */,
@@ -98,6 +113,27 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		68346FA82497C19000A12BD1 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				68346FA92497C19000A12BD1 /* APIEndpointType.swift */,
+				68346FAA2497C19000A12BD1 /* APIClient.swift */,
+				68346FAB2497C19000A12BD1 /* Result.swift */,
+				68346FAC2497C19000A12BD1 /* Reachability.swift */,
+				68346FAD2497C19000A12BD1 /* CustomError.swift */,
+				68346FAE2497C19000A12BD1 /* Endpoint.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		68346FB52497CBA600A12BD1 /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				68346FB62497CBCB00A12BD1 /* ArticlesClient.swift */,
+			);
+			path = Client;
+			sourceTree = "<group>";
+		};
 		6862165A2497B20E0086674D = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +161,7 @@
 				686216932497B4250086674D /* Extensions */,
 				686216952497B4250086674D /* LaunchScreen */,
 				686216942497B4250086674D /* Modules */,
+				68346FA82497C19000A12BD1 /* Network */,
 				686216972497B4250086674D /* Resources */,
 				6862168C2497B4250086674D /* Supporting files */,
 			);
@@ -313,11 +350,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68346FB12497C19000A12BD1 /* Result.swift in Sources */,
 				68346F9B2497B5CE00A12BD1 /* Extension.swift in Sources */,
+				68346FB72497CBCB00A12BD1 /* ArticlesClient.swift in Sources */,
+				68346FAF2497C19000A12BD1 /* APIEndpointType.swift in Sources */,
 				68346FA32497B72200A12BD1 /* ArticlesViewModel.swift in Sources */,
+				68346FB02497C19000A12BD1 /* APIClient.swift in Sources */,
 				68346FA52497B73200A12BD1 /* Article.swift in Sources */,
 				6862169C2497B4250086674D /* AppDelegate.swift in Sources */,
+				68346FB32497C19000A12BD1 /* CustomError.swift in Sources */,
 				6862169B2497B4250086674D /* mvvm_test.xcdatamodeld in Sources */,
+				68346FB22497C19000A12BD1 /* Reachability.swift in Sources */,
+				68346FB42497C19000A12BD1 /* Endpoint.swift in Sources */,
 				68346F9D2497B5DE00A12BD1 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
