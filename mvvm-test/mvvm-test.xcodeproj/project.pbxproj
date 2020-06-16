@@ -19,6 +19,8 @@
 		68346FB32497C19000A12BD1 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68346FAD2497C19000A12BD1 /* CustomError.swift */; };
 		68346FB42497C19000A12BD1 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68346FAE2497C19000A12BD1 /* Endpoint.swift */; };
 		68346FB72497CBCB00A12BD1 /* ArticlesClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68346FB62497CBCB00A12BD1 /* ArticlesClient.swift */; };
+		68346FB92497EE0100A12BD1 /* ArticlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68346FB82497EE0100A12BD1 /* ArticlesViewController.swift */; };
+		68346FBD24986DC900A12BD1 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68346FBC24986DC900A12BD1 /* ArticleTableViewCell.swift */; };
 		686216812497B2140086674D /* mvvm_testTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686216802497B2140086674D /* mvvm_testTests.swift */; };
 		6862169B2497B4250086674D /* mvvm_test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6862168F2497B4250086674D /* mvvm_test.xcdatamodeld */; };
 		6862169C2497B4250086674D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686216922497B4250086674D /* AppDelegate.swift */; };
@@ -49,6 +51,8 @@
 		68346FAD2497C19000A12BD1 /* CustomError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		68346FAE2497C19000A12BD1 /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		68346FB62497CBCB00A12BD1 /* ArticlesClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesClient.swift; sourceTree = "<group>"; };
+		68346FB82497EE0100A12BD1 /* ArticlesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesViewController.swift; sourceTree = "<group>"; };
+		68346FBC24986DC900A12BD1 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		686216632497B20E0086674D /* mvvm-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mvvm-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6862167C2497B2140086674D /* mvvm-testTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mvvm-testTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		686216802497B2140086674D /* mvvm_testTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mvvm_testTests.swift; sourceTree = "<group>"; };
@@ -109,6 +113,8 @@
 			isa = PBXGroup;
 			children = (
 				68346FA62497B74000A12BD1 /* Articles.storyboard */,
+				68346FB82497EE0100A12BD1 /* ArticlesViewController.swift */,
+				68346FBC24986DC900A12BD1 /* ArticleTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -353,12 +359,14 @@
 				68346FB12497C19000A12BD1 /* Result.swift in Sources */,
 				68346F9B2497B5CE00A12BD1 /* Extension.swift in Sources */,
 				68346FB72497CBCB00A12BD1 /* ArticlesClient.swift in Sources */,
+				68346FB92497EE0100A12BD1 /* ArticlesViewController.swift in Sources */,
 				68346FAF2497C19000A12BD1 /* APIEndpointType.swift in Sources */,
 				68346FA32497B72200A12BD1 /* ArticlesViewModel.swift in Sources */,
 				68346FB02497C19000A12BD1 /* APIClient.swift in Sources */,
 				68346FA52497B73200A12BD1 /* Article.swift in Sources */,
 				6862169C2497B4250086674D /* AppDelegate.swift in Sources */,
 				68346FB32497C19000A12BD1 /* CustomError.swift in Sources */,
+				68346FBD24986DC900A12BD1 /* ArticleTableViewCell.swift in Sources */,
 				6862169B2497B4250086674D /* mvvm_test.xcdatamodeld in Sources */,
 				68346FB22497C19000A12BD1 /* Reachability.swift in Sources */,
 				68346FB42497C19000A12BD1 /* Endpoint.swift in Sources */,
@@ -506,6 +514,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YPVQ3V9A8H;
 				INFOPLIST_FILE = "$(SRCROOT)/mvvm-test/Supporting files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -524,6 +533,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YPVQ3V9A8H;
 				INFOPLIST_FILE = "$(SRCROOT)/mvvm-test/Supporting files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

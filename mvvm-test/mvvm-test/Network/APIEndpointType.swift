@@ -29,7 +29,7 @@ public enum APIEndpointType : Endpoint {
     var query: [URLQueryItem] {
         switch self {
         case .blogs(let page, let limit):
-            return [URLQueryItem(name: "offset", value: "\(page)"),
+            return [URLQueryItem(name: "page", value: "\(page)"),
                     URLQueryItem(name: "limit", value: "\(limit)")]
         }
     }
