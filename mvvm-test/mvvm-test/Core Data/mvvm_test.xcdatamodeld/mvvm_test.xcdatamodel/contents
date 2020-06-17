@@ -1,4 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19E287" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="BlogModel" representedClassName="BlogModel" syncable="YES">
+        <attribute name="articleBody" optional="YES" attributeType="String"/>
+        <attribute name="articleComments" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="articleImage" optional="YES" attributeType="String"/>
+        <attribute name="articleLikes" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="articleTitle" optional="YES" attributeType="String"/>
+        <attribute name="articleURI" optional="YES" attributeType="String"/>
+        <attribute name="postDate" optional="YES" attributeType="String"/>
+        <attribute name="userDesignation" optional="YES" attributeType="String"/>
+        <attribute name="userImage" optional="YES" attributeType="String"/>
+        <attribute name="username" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="BlogModel" positionX="-63" positionY="-18" width="128" height="193"/>
+    </elements>
 </model>

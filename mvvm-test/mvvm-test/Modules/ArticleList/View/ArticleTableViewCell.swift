@@ -23,31 +23,33 @@ class ArticleTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        userImage.layer.cornerRadius = 22.5
     }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        userImage.image = nil
+          articleImage.image = nil
     }
     
-    func populateCell(_ blog: Blog) {
-        if let firstUser = blog.user.first {
-            userImage.imageFromServerURL(firstUser.avatar, placeHolder: nil)
-            username.text = firstUser.name
-            userDesignation.text = firstUser.designation
+    func populateCell(_ blog: BlogUserRepresentableModel) {
+        userImage.imageFromServerURL(blog.userImage, placeHolder: nil)
+        username.text = blog.username
+        userDesignation.text = blog.userDesignation
+        
+        articleBody.text = blog.articleBody
+        postDate.text = blog.postDate
+        articleTitle.text = blog.articleTitle
+        articleURI.text = blog.articleURI
+        if let imageURL = blog.articleImage  {
+            articleImage.imageFromServerURL(imageURL, placeHolder: nil)
+        } else {
+            //remove and adjust size of the cell
         }
         
-        articleBody.text = blog.content
-        
-        if let media = blog.media.first {
-            articleTitle.text = media.title
-            articleURI.text = media.url
-            articleImage.imageFromServerURL(media.image, placeHolder: nil)
-        }
-        
-        artileLikes.text = "\(blog.likes)"
-        articleComments.text = "\(blog.comments)"
+        artileLikes.text = blog.articleLikes > 1000 ? "\(Double(blog.articleLikes)/1000.0)K Likes" : "\(blog.articleLikes) Likes"
+        articleComments.text = blog.articleComments > 1000 ? "\(Double(blog.articleComments)/1000.0)K Comments" : "\(blog.articleComments) Comments"
 
     }
     
