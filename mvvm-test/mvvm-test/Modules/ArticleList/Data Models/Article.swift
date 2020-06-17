@@ -16,13 +16,6 @@ struct Blog: Codable {
     let comments, likes: Int
     let media: [Media]
     let user: [User]
-    
-    var createdDate: Date {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-        let date = formatter.date(from: createdAt)
-        return date ?? Date()
-    }
 }
 
 // MARK: - Media

@@ -31,7 +31,7 @@ class ArticleTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         userImage.image = nil
-          articleImage.image = nil
+        articleImage.image = nil
     }
     
     func populateCell(_ blog: BlogUserRepresentableModel) {
@@ -40,7 +40,7 @@ class ArticleTableViewCell: UITableViewCell {
         userDesignation.text = blog.userDesignation
         
         articleBody.text = blog.articleBody
-        postDate.text = blog.postDate
+        postDate.text = getPostDate(dateString: blog.postDate)
         articleTitle.text = blog.articleTitle
         articleURI.text = blog.articleURI
         if let imageURL = blog.articleImage  {
@@ -59,4 +59,10 @@ class ArticleTableViewCell: UITableViewCell {
 
     }
     
+    func getPostDate(dateString: String) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        let date = formatter.date(from: dateString)
+        return date!.getElapsedInterval()
+    }
 }
