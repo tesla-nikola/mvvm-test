@@ -11,7 +11,6 @@ import UIKit
 final class ArticlesViewController: UIViewController {
     @IBOutlet weak var tableview: UITableView!
     private let viewModel = ArticlesViewModel(client: ArtliclesListClient())
-//    private var blogs: [BlogUserRepresentableModel] = []
     private var isFetchingMore = false
     
     override func viewDidLoad() {

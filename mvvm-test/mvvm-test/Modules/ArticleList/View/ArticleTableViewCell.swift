@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ArticleTableViewCell: UITableViewCell {
+final class ArticleTableViewCell: UITableViewCell {
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var username: UILabel!
     @IBOutlet weak var userDesignation: UILabel!
@@ -62,7 +62,11 @@ class ArticleTableViewCell: UITableViewCell {
     func getPostDate(dateString: String) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-        let date = formatter.date(from: dateString)
-        return date!.getElapsedInterval()
+        if let date = formatter.date(from: dateString) {
+            return date.getElapsedInterval()
+        } else {
+            return Date().getElapsedInterval()
+        }
+        
     }
 }
