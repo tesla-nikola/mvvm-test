@@ -19,6 +19,7 @@ class ArticleTableViewCell: UITableViewCell {
     @IBOutlet weak var articleURI: UILabel!
     @IBOutlet weak var artileLikes: UILabel!
     @IBOutlet weak var articleComments: UILabel!
+    @IBOutlet weak var articleImageHeight: NSLayoutConstraint!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -43,9 +44,14 @@ class ArticleTableViewCell: UITableViewCell {
         articleTitle.text = blog.articleTitle
         articleURI.text = blog.articleURI
         if let imageURL = blog.articleImage  {
-            articleImage.imageFromServerURL(imageURL, placeHolder: nil)
+            if Reachability.isConnectedToNetwork() {
+                articleImage.imageFromServerURL(imageURL, placeHolder: nil)
+            } else {
+                articleImageHeight.constant = 0.0
+            }
         } else {
             //remove and adjust size of the cell
+            articleImageHeight.constant = 0.0
         }
         
         artileLikes.text = blog.articleLikes > 1000 ? "\(Double(blog.articleLikes)/1000.0)K Likes" : "\(blog.articleLikes) Likes"

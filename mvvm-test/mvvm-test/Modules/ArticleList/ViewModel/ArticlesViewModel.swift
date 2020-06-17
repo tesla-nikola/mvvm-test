@@ -7,7 +7,7 @@
 //
 
 import Foundation
-typealias articleCallback = (_ blogs: [BlogUserRepresentableModel]?, _ error: CustomError?) -> Void
+typealias articleCallback = (_ status: Bool, _ error: CustomError?) -> Void
 
 protocol ArticleAPIDataProvder: class {
     var apiClient: ArtliclesListClient {get set}
@@ -18,22 +18,37 @@ protocol ArticleAPIDataProvder: class {
 final class ArticlesViewModel: ArticleAPIDataProvder {
     var apiClient: ArtliclesListClient
     var currentPage: Int
+    var blogsList : [BlogUserRepresentableModel]
+    let dbClient = BlogsLocalClient()
     
     init(client: ArtliclesListClient) {
         self.apiClient = client
         self.currentPage = 1
+        self.blogsList = []
     }
     
     func getArticles(completion: @escaping articleCallback) {
-        apiClient.fetchArticles(endpoint: .blogs(page: currentPage, limit: 10)) { [weak self] result in
-            guard let welf = self else { return }
-            switch result {
-            case.success(let blogs):
-                let articles = welf.covertToRepresentable(blogs: blogs ?? [])
-                completion(articles,nil)
-            case .failure(let err):
-                completion(nil,err)
+        if Reachability.isConnectedToNetwork() {
+            apiClient.fetchArticles(endpoint: .blogs(page: currentPage, limit: 10)) { [weak self] result in
+                guard let welf = self else { return }
+                switch result {
+                case.success(let blogs):
+                    let newBlogs = welf.covertToRepresentable(blogs: blogs ?? [])
+                    welf.blogsList.append(contentsOf: newBlogs)
+                    do {
+                        try welf.dbClient.saveBlogs(blogs: newBlogs)
+                    } catch {}
+                    completion(true,nil)
+                case .failure(let err):
+                    completion(false,err)
+                }
+                
             }
+        } else {
+            do {
+                try blogsList = dbClient.retreiveBlogs()
+            } catch {}
+            completion(false, CustomError.noNetwork)
         }
     }
     

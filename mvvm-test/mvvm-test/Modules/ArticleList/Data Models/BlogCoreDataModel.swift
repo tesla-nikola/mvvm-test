@@ -18,6 +18,6 @@ class BlogModel: NSManagedObject {
     @NSManaged var articleBody: String
     @NSManaged var articleTitle: String
     @NSManaged var articleURI: String
-    @NSManaged var artileLikes: Int16
-    @NSManaged var articleComments: Int16
+    @NSManaged var articleLikes: Int64
+    @NSManaged var articleComments: Int64
 }

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Gig-JB-ZcR">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -148,6 +149,7 @@
                                             <outlet property="articleBody" destination="mCO-pb-HcS" id="WkD-cl-dBj"/>
                                             <outlet property="articleComments" destination="Qcs-fS-P6q" id="OLA-nd-Y07"/>
                                             <outlet property="articleImage" destination="Tmy-NS-AkW" id="G95-4B-fDJ"/>
+                                            <outlet property="articleImageHeight" destination="Prl-YW-OHg" id="YqT-VQ-RwD"/>
                                             <outlet property="articleTitle" destination="mjj-u7-8vG" id="XbW-fK-kJa"/>
                                             <outlet property="articleURI" destination="TBS-7d-fik" id="tRc-hZ-MhO"/>
                                             <outlet property="artileLikes" destination="6ed-3U-dTN" id="ydL-gI-wsq"/>

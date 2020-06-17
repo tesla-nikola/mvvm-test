@@ -16,6 +16,8 @@ enum CustomError: Error {
     case jsonParsingFailure
     case noNetwork
     case noData
+    case managedObjectContextNotFound
+    case couldNotSaveObject
     
     var localizedDescription: String {
         switch self {
@@ -26,6 +28,8 @@ enum CustomError: Error {
         case .jsonConversionFailure: return AppConstants.jsonConversionFailure
         case .noNetwork: return AppConstants.noNetwork
         case .noData: return AppConstants.noData
+        case .managedObjectContextNotFound: return AppConstants.managedObjectContextNotFound
+        case .couldNotSaveObject: return AppConstants.couldNotSaveObject
         }
     }
 }
@@ -39,4 +43,6 @@ struct AppConstants {
     static let jsonConversionFailure = "JSON Conversion Failure"
     static let noNetwork = "No Internet. Please check your internet connection"
     static let noData = "No Data"
+    static let managedObjectContextNotFound = "Core Data Managed Object Not found"
+    static let couldNotSaveObject = "Was not able to save data to local"
 }
